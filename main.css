@@ -63,8 +63,6 @@ iframe {
     font-weight: 400;
     font-size: 24px;
     line-height: 28px;
-    display: flex;
-    align-items: center;
     width: 158px;
     height: 28px;
 }
@@ -162,6 +160,10 @@ iframe {
 .button:hover {
     box-shadow: none;
     cursor: pointer;
+}
+
+.logotype:hover {
+    box-shadow: none;
 }
 
 .content {
@@ -382,6 +384,11 @@ iframe {
     margin-right: calc(50% - 500px / 2)
 }
 
+.logotype {
+    box-shadow: 0px 0px 7px 3px #061c52;
+    background: rgb(235, 92, 31);
+}
+
 .my__page__welcome {
     font-family: 'Roboto';
     font-style: normal;
@@ -411,17 +418,20 @@ input:checked+.my__page {
 }
 
 .listing {
-    margin: 15px;
+    margin: auto;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 250px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 150px;
     opacity: 0%;
+    max-width: 800px;
+    flex-wrap: wrap;
 }
 
 .autobiography {
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
     padding-left: calc(50% - 1202px / 2);
     padding-right: calc(50% - 1202px / 2);
 }
@@ -435,8 +445,7 @@ input:checked+.my__page {
 .family,
 .hobby {
     text-align: center;
-    display: flex;
-    opacity: 0%;
+    display: none;
     background-color: #FFF;
     max-width: 1200px;
     width: 100%;
@@ -445,21 +454,16 @@ input:checked+.my__page {
     align-items: center;
     justify-content: space-between;
 }
-.training,
-.family,
-.hobby {
-    margin-top: -500px;
-}
 
 .my_text {
-      text-align: center;
+    text-align: center;
     max-width: 500px;
+    line-height: 1.5;
 }
 
 .clarity {
-    opacity: 100%;
-    transition: 1.5s;
-   }
+    display: flex;
+}
 
 .my__listing {
     opacity: 100%;
@@ -546,6 +550,14 @@ input:checked+.my__page {
     .listing {
         flex-direction: row;
     }
+
+    .clarity {
+        justify-content: space-evenly;
+    }
+
+    .my_text {
+        max-width: 450px;
+    }
 }
 
 
@@ -553,16 +565,12 @@ input:checked+.my__page {
 
     /*стили для мобильного*/
     .header {
-        padding-left: 0px;
+        padding-left: 16px;
         padding-right: 16px;
     }
 
     .menu {
         flex-direction: column;
-    }
-
-    .logo {
-        display: none;
     }
 
     .windows {
@@ -572,6 +580,8 @@ input:checked+.my__page {
     .content {
         padding-left: 16px;
         padding-right: 16px;
+        display: grid;
+        justify-items: center;
     }
 
     .content_info {
@@ -644,12 +654,9 @@ input:checked+.my__page {
     }
 
     .my__page__windows {
-        top: 360px;
-    }
-
-    .my__page__windows {
+        top: 300px;
         width: 400px;
-        height: 500px;
+        height: 400px;
         margin-left: calc(50% - 400px / 2);
         margin-right: calc(50% - 400px / 2);
     }
@@ -657,14 +664,58 @@ input:checked+.my__page {
     .my__listing {
         opacity: 100%;
         transition: 1.5s;
+        height: 150px;
+    }
+
+    .birth,
+    .training,
+    .family,
+    .hobby {
+        gap: 20px;
+    }
+
+    .my_text {
+        max-width: 600px;
+        text-align: justify;
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
     .my__page__windows {
-        width: 300px;
-        height: 400px;
-        margin-left: calc(50% - 300px / 2);
-        margin-right: calc(50% - 300px / 2);
+        padding-top: 25px;
+        justify-content: flex-start;
+        gap: 10px;
+        width: 400px;
+        height: 350px;
+        margin-left: calc(50% - 400px / 2);
+        margin-right: calc(50% - 400px / 2);
     }
+
+    .my__page {
+        margin-top: 10px;
+    }
+
+    .windows {
+        width: 400px;
+        height: 400px;
+        margin-left: calc(50% - 400px / 2);
+        margin-right: calc(50% - 400px / 2);
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .login,
+    .password {
+        width: 350px;
+    }
+
+    .autobiography {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+
+
 }
